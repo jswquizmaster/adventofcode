@@ -11,8 +11,10 @@ with open("input.txt", 'r') as file:
 answer = 0
 for line in lines:
     report = [int(id) for id in line.split()]
-    check.asc = None
-    if all(check(levels) for levels in pairwise(report)):
-        answer = answer + 1
+    for i in range(len(report)+1):
+        check.asc = None
+        if all(check(levels) for levels in pairwise(report[:i] + report[i+1:])):
+            answer = answer + 1
+            break
     
 print("Answer; ", answer)
