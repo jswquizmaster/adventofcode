@@ -1,0 +1,231 @@
+
+package main
+
+import (
+	"fmt"
+	"math"
+    "strconv"
+)
+func round(x float64, decimals int) float64 {
+    pow := math.Pow(10, float64(decimals))
+    return math.Round(x * pow) / pow
+}
+
+const maxValue = 250
+
+
+func solve1 () int {
+  var x [14]float64
+  minSum := 99999.0
+  minSol := ""
+
+  for x[9]=0.0;x[9]<maxValue;x[9]++ {
+  for x[12]=0.0;x[12]<maxValue;x[12]++ {
+  for x[13]=0.0;x[13]<maxValue;x[13]++ {
+  x[1]=(149.0/2.0)+x[9]-4*x[12]-(3.0/2.0)*x[13]
+  x[2]=124+2*x[9]-8*x[12]-3*x[13]
+  x[3]=-73-2*x[9]+6*x[12]+x[13]
+  x[4]=-(23.0/2.0)+x[12]-(1.0/2.0)*x[13]
+  x[5]=(125.0/2.0)+2*x[9]-4*x[12]-(3.0/2.0)*x[13]
+  x[6]=-(63.0/2.0)-x[9]+3*x[12]+(5.0/2.0)*x[13]
+  x[7]=56-3*x[12]-x[13]
+  x[8]=-(207.0/2.0)-2*x[9]+8*x[12]+(5.0/2.0)*x[13]
+  x[10]=(135.0/2.0)-3*x[12]-(1.0/2.0)*x[13]
+  x[11]=-(29.0/2.0)+x[12]+(1.0/2.0)*x[13]
+
+  skip := false
+  sum := 0.0
+  sol := ""
+  for k:=1;k<len(x);k++ {
+    x[k] = round(x[k], 4)
+    if (x[k] < 0) || (x[k] - math.Abs(math.Round(x[k])) > 0.00001) { 
+      skip = true
+      break
+    }
+    sum += x[k]
+    sol += strconv.Itoa(int(x[k])) + " "
+  }
+  if !skip {
+    if sum < minSum {
+      minSum = sum
+      minSol = sol
+    }
+  }
+
+
+  }
+  }
+  }
+  fmt.Println(int(minSum), ": ", minSol)
+  return int(minSum)
+}
+
+func solve2 () int {
+  var x [8]float64
+  minSum := 99999.0
+  minSol := ""
+
+  for x[6]=0.0;x[6]<maxValue;x[6]++ {
+  for x[7]=0.0;x[7]<maxValue;x[7]++ {
+  x[1]=-129+x[7]
+  x[2]=15
+  x[3]=149-x[6]-x[7]
+  x[4]=135-x[6]-x[7]
+  x[5]=12+x[6]
+
+  skip := false
+  sum := 0.0
+  sol := ""
+  for k:=1;k<len(x);k++ {
+    x[k] = round(x[k], 4)
+    if (x[k] < 0) || (x[k] - math.Abs(math.Round(x[k])) > 0.00001) { 
+      skip = true
+      break
+    }
+    sum += x[k]
+    sol += strconv.Itoa(int(x[k])) + " "
+  }
+  if !skip {
+    if sum < minSum {
+      minSum = sum
+      minSol = sol
+    }
+  }
+
+
+  }
+  }
+  fmt.Println(int(minSum), ": ", minSol)
+  return int(minSum)
+}
+
+func solve3 () int {
+  var x [7]float64
+  minSum := 99999.0
+  minSol := ""
+
+  for x[4]=0.0;x[4]<maxValue;x[4]++ {
+  for x[6]=0.0;x[6]<maxValue;x[6]++ {
+  x[1]=-94+x[4]-x[6]
+  x[2]=114-x[4]
+  x[3]=123-x[4]+x[6]
+  x[5]=12-x[6]
+
+  skip := false
+  sum := 0.0
+  sol := ""
+  for k:=1;k<len(x);k++ {
+    x[k] = round(x[k], 4)
+    if (x[k] < 0) || (x[k] - math.Abs(math.Round(x[k])) > 0.00001) { 
+      skip = true
+      break
+    }
+    sum += x[k]
+    sol += strconv.Itoa(int(x[k])) + " "
+  }
+  if !skip {
+    if sum < minSum {
+      minSum = sum
+      minSol = sol
+    }
+  }
+
+
+  }
+  }
+  fmt.Println(int(minSum), ": ", minSol)
+  return int(minSum)
+}
+
+func solve4 () int {
+  var x [14]float64
+  minSum := 99999.0
+  minSol := ""
+
+  for x[7]=0.0;x[7]<maxValue;x[7]++ {
+  for x[12]=0.0;x[12]<maxValue;x[12]++ {
+  for x[13]=0.0;x[13]<maxValue;x[13]++ {
+  x[1]=11-(1.0/3.0)*x[13]
+  x[2]=8-(2.0/3.0)*x[13]
+  x[3]=24-x[7]-2*x[12]+2*x[13]
+  x[4]=20-2*x[7]-2*x[12]+2*x[13]
+  x[5]=15+x[7]-x[12]+(2.0/3.0)*x[13]
+  x[6]=15+(1.0/3.0)*x[13]
+  x[8]=x[12]-(5.0/3.0)*x[13]
+  x[9]=25-x[12]+x[13]
+  x[10]=-1+x[12]-(5.0/3.0)*x[13]
+  x[11]=118+x[12]-(4.0/3.0)*x[13]
+
+  skip := false
+  sum := 0.0
+  sol := ""
+  for k:=1;k<len(x);k++ {
+    x[k] = round(x[k], 4)
+    if (x[k] < 0) || (x[k] - math.Abs(math.Round(x[k])) > 0.00001) { 
+      skip = true
+      break
+    }
+    sum += x[k]
+    sol += strconv.Itoa(int(x[k])) + " "
+  }
+  if !skip {
+    if sum < minSum {
+      minSum = sum
+      minSol = sol
+    }
+  }
+
+
+  }
+  }
+  }
+  fmt.Println(int(minSum), ": ", minSol)
+  return int(minSum)
+}
+
+func solve5 () int {
+  var x [6]float64
+  minSum := 99999.0
+  minSol := ""
+
+  x[1]=4
+  x[2]=16
+  x[3]=1
+  x[4]=153
+  x[5]=0
+
+  skip := false
+  sum := 0.0
+  sol := ""
+  for k:=1;k<len(x);k++ {
+    x[k] = round(x[k], 4)
+    if (x[k] < 0) || (x[k] - math.Abs(math.Round(x[k])) > 0.00001) { 
+      skip = true
+      break
+    }
+    sum += x[k]
+    sol += strconv.Itoa(int(x[k])) + " "
+  }
+  if !skip {
+    if sum < minSum {
+      minSum = sum
+      minSol = sol
+    }
+  }
+
+
+  fmt.Println(int(minSum), ": ", minSol)
+  return int(minSum)
+}
+
+func main() {
+  answer := 0
+
+  answer += solve1()
+  answer += solve2()
+  answer += solve3()
+  answer += solve4()
+  answer += solve5()
+
+  fmt.Println("Answer: ", answer)
+}
