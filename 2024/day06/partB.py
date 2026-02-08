@@ -8,7 +8,7 @@ with open("input.txt", 'r') as file:
 max_y = 130
 max_x = 130
 # Since the puzzle input is relatively small we use an upper bound of iterations 
-# instead of a accurate loop detection in this case
+# instead of an accurate loop detection in this case
 # The area is 130x130 blocks. Each block can be reached from 4 different directions
 # So 130*130*4 is an upper limit of iterations before the guard is stuck in a loop 
 max_i = max_x*max_y*4
